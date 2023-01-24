@@ -41,11 +41,11 @@ namespace TeamViewer.AdditionalClasses
                 int i = 3;
                 while (true)
                 {
-                    Task.Delay(10000);
+                    //Task.Delay(1);
                     ScreenShot screenShot = new ScreenShot();
-                    var imagepath = screenShot.GetScreenShotPath(++i);
+                    var imagepath = screenShot.GetScreenShotJpeg(++i);
                     ImageHelper imageHelper = new ImageHelper();
-                    var imagebytes = imageHelper.GetBytesOfImage(imagepath);
+                    var imagebytes = imageHelper.GetBytesOfImageJpeg(imagepath);
                     DataBytes = imagebytes;
                     NetworkStream stream = client.GetStream();
                     stream.Write(DataBytes, 0, DataBytes.Length);

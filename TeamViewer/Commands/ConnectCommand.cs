@@ -35,7 +35,7 @@ namespace TeamViewer.Commands
             ScreenShot screenShot = new ScreenShot();
             var imagepath = screenShot.GetScreenShotPath(10000);
             ImageHelper imageHelper = new ImageHelper();
-            var imagebytes = imageHelper.GetBytesOfImage(imagepath);
+            var imagebytes = imageHelper.GetBytesOfImageJpeg(imagepath);
             network.DataBytes = imagebytes;
             Task.Run(() =>
             {
