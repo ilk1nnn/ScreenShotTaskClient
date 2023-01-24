@@ -21,7 +21,7 @@ namespace TeamViewer.AdditionalClasses
                 // Note, for this client to work you need to have a TcpServer 
                 // connected to the same address as specified by the server, port
                 // combination.
-                IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse(NetworkProtocol.IPAddress), NetworkProtocol.TcpPort);
+                IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse(IPAddress.Loopback.ToString()), NetworkProtocol.TcpPort);
                 TcpClient client = new TcpClient();
                 Console.WriteLine("Starting to connect server");
                 while (!client.Connected)
